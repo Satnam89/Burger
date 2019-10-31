@@ -15,10 +15,22 @@ class App extends Component {
 
   state = {
     persons: [
-      {name : 'Max'},
-      {name: 'Mani'},
-      {name: 'Satnam'}
+      { name: 'Max' },
+      { name: 'Mani' },
+      { name: 'Satnam' }
     ]
+  }
+
+  switchNameHandler = () => {
+    this.setState(
+      {
+        persons: [
+          { name: 'Maxiam' },
+          { name: 'Mani' },
+          { name: 'Satnam' }
+        ]
+      }
+    )
   }
 
 
@@ -26,14 +38,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi!</h1>
-        <button>Switch</button>
+        <button onClick={this.switchNameHandler}>Switch</button>
         <Person name={this.state.persons[0].name}> My hobbies: Cricket</Person>
-        <Person name={this.state.persons[1].name}/>
-        
-        <Person name={this.state.persons[2].name}/>
+        <Person name={this.state.persons[1].name} />
+
+        <Person name={this.state.persons[2].name} />
       </div>
     );
-   // return React.createElement('div', { class: 'App' }, React.createElement('h1', null, 'Hello'));
+    // return React.createElement('div', { class: 'App' }, React.createElement('h1', null, 'Hello'));
   }
 
 
